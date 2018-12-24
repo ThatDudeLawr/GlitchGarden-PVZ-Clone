@@ -26,15 +26,16 @@ public class Attackers : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log(name + " trigger enter.");
+		
 	}
 
-	public void setSpeed(float speed){
+	public void setSpeed(float speed)
+    {
 		currentSpeed = speed;
 	}
 
-	public void StrikeCurrentTarget(float damage){
-		Debug.Log(name + "- Damage given:" + damage);
+	public void StrikeCurrentTarget(float damage)
+    {
 		if(currentTarget)
 		{
 			Health health = currentTarget.GetComponent<Health>();
@@ -45,7 +46,8 @@ public class Attackers : MonoBehaviour {
 		}
 	}
 
-	public void Attack(GameObject obj){
+	public void Attack(GameObject obj)
+    {
 		currentTarget = obj;
 	}
 }

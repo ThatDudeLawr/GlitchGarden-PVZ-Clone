@@ -17,7 +17,7 @@ public class Lizard : MonoBehaviour {
 	void Update () {
 		
 	}
-
+    // Attack starts after colliding with something
 	void OnTriggerEnter2D(Collider2D collider)
 	{
 		GameObject obj = collider.gameObject;
@@ -28,6 +28,7 @@ public class Lizard : MonoBehaviour {
 		anim.SetBool("isAttacking", true);
 		attacker.Attack(obj);
 		attacker.StrikeCurrentTarget(15f);
+    // Defender health reached 0, interrupts the attack and starts moving
 		if(obj.GetComponent<Health>().HP < 0)
 		{
 			anim.SetBool("isAttacking", false);
